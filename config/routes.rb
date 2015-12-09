@@ -5,6 +5,8 @@ Rails.application.routes.draw do
     resources :items
   end
 
+  # post '/users/:id/items/new' => 'items#new'
+
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
   get '/logout' => 'sessions#destroy'

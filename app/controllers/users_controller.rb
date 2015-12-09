@@ -1,11 +1,17 @@
 class UsersController < ApplicationController
 
+  # Users only have access to their personal list of items.
+  # before_action :authorize_strict, only: [:show]
+
   def index
     @users = User.all
   end
 
   def show
     @user = User.find(params[:id])
+    @item = Item.new
+    @user_id = @user.id
+    # binding.pry
   end
 
   def new

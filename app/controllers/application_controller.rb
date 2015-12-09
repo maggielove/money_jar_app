@@ -9,5 +9,10 @@ class ApplicationController < ActionController::Base
   # include helper_method so app can recognize current_user
   helper_method(:current_user)
 
+  # Users only have access to their personal list of items.
+  # def authorize_strict
+  #   redirect_to "/login" unless current_user.id === params[:user_id]
+  # end
+
   protect_from_forgery with: :exception
 end

@@ -1,1 +1,19 @@
-<h1><%= "#{@user.email}" %></h1>
+<h4><%= "#{@user.email}" %></h4>
+
+<h3>Stuff You Didn't Buy</h3>
+
+<% @user.items.each do |item| %>
+  <ul>
+  <li>
+    <%= item.name %>
+    <%= item.price %>
+    <%= item.category %>
+  </li>
+</ul>
+<% end %>
+
+<div id="blank-item">
+  <%= render partial: 'items/form' %>
+</div>
+
+<%#= link_to "add item", "/users/#{@user.id}/items/new" %>
