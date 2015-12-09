@@ -1,0 +1,12 @@
+<h1>Stuff You Didn't Buy</h1>
+<p>💰Get money, don't spend it.💰</p>
+
+<% @user.items.each do |item| %>
+  <ul>
+  <li>
+    <%= item.name %>
+    <%= item.price %>
+    <%= item.category %>
+  </li>
+</ul>
+<% end %>
