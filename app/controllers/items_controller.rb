@@ -5,7 +5,7 @@ class ItemsController < ApplicationController
   end
 
   def new
-    # @user = current_user
+    @user = current_user
     @item = @user.items.new
   end
 
