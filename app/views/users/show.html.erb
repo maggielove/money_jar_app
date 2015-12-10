@@ -16,4 +16,12 @@
   <%= render partial: 'items/form' %>
 </div>
 
+<h4>Total Savings:</h4>
+
+<% ttlSaved = 0  %>
+<% @user.items.each do |item| %>
+  <% ttlSaved += item.price %>
+<% end %>
+<%= ttlSaved %>
+
 <%#= link_to "add item", "/users/#{@user.id}/items/new" %>
