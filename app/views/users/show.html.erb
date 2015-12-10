@@ -3,25 +3,25 @@
 
   <% @user.items.each do |item| %>
     <ul>
-    <li>
-      <%= item.name %>
-      <%= item.price %>
-      <%= item.category %>
+    <li id="single-item">
+      <span id="item-name"><%= item.name %></span>
+      <span id="item-price"><%= "$#{item.price}" %></span>
+      <span id="item-category"><%= "(#{item.category})" %></span>
       <%= link_to "edit", "/users/#{@user.id}/items/#{item.id}/edit" %> |
       <%= link_to "x", "/users/#{@user.id}/items/#{item.id}", method: :delete, data: {confirm: "Gotta treat yourself every now and then. Delete item?"} %>
     </li>
   </ul>
   <% end %>
 
+  <div id="savings">
+    <% ttlSaved = 0  %>
+    <% @user.items.each do |item| %>
+      <% ttlSaved += item.price %>
+    <% end %>
+    <div id="saved-total"><%= "Total Savings: #{ttlSaved}" %></div>
+  </div>
+
   <div id="blank-item">
     <%= render partial: 'items/form' %>
   </div>
-
-  <h4>Total Savings:</h4>
-
-  <% ttlSaved = 0  %>
-  <% @user.items.each do |item| %>
-    <% ttlSaved += item.price %>
-  <% end %>
-  <%= ttlSaved %>
 </div>

@@ -1,14 +1,16 @@
 
-<%= form_for @item, url: "/users/#{@user.id}/items" do |f| %>
+<div id="item-form">
+  <%= form_for @item, url: "/users/#{@user.id}/items" do |f| %>
 
-  <%= f.label :name %>
-  <%= f.text_field :name %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
 
-  <%= f.label :price %>
-  <%= f.text_field :price %>
+    <%= f.label :price %>
+    <%= f.text_field :price %>
 
-  <%= f.label :category %>
-  <%= f.text_field :category %>
+    <%= f.label :category %>
+    <%= f.text_field :category %>
 
-  <%= f.submit "add" %>
-<% end %>
+    <%= f.submit "add" %>
+  <% end %>
+</div>
