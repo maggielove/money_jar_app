@@ -8,6 +8,8 @@
     <%= item.name %>
     <%= item.price %>
     <%= item.category %>
+    <%= link_to "edit", "/users/#{@user.id}/items/#{item.id}/edit" %> |
+    <%= link_to "x", "/users/#{@user.id}/items/#{item.id}", method: :delete, data: {confirm: "Gotta treat yourself every now and then. Delete item?"} %>
   </li>
 </ul>
 <% end %>

@@ -1,5 +1,10 @@
 class ItemsController < ApplicationController
 
+  def show
+    @user = User.find(params[:user_id])
+    @item = @user.items.find(params[:id])
+  end
+
   def new
     @user = current_user
     # @user_id = @user.id
@@ -15,13 +20,26 @@ class ItemsController < ApplicationController
     redirect_to "/users/#{@user.id}"
   end
 
-  # def destroy
-  #   @user = User.find(params[:user_id])
-  #   @item = @user.items.find(params[:id])
-  #   @item.destroy
-  #
-  #   redirect_to "/users/#{@user.id}/items"
-  # end
+  def edit
+    @user = User.find(params[:user_id])
+    @item = @user.items.find(params[:id])
+  end
+
+  def update
+    @user = User.find(params[:user_id])
+    @item = @user.items.find(params[:id])
+    @item.update(item_params)
+
+    redirect_to "/users/#{@user.id}"
+  end
+
+  def destroy
+    @user = User.find(params[:user_id])
+    @item = @user.items.find(params[:id])
+    @item.destroy
+
+    redirect_to "/users/#{@user.id}"
+  end
 
   private
 

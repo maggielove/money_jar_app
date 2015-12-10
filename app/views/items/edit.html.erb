@@ -1,0 +1,19 @@
+<div id="edit-form">
+  <%= form_for @item, url: user_item_path, html: {method: "patch"} do |f| %>
+    <p>
+      <%= f.label :name %><br>
+      <%= f.text_field :name %>
+    </p>
+    <p>
+      <%= f.label :price %>
+      <%= f.text_field :price %>
+    </p>
+    <p>
+      <%= f.label :category %>
+      <%= f.text_field :category %>
+    </p>
+    <p>
+      <%= f.submit "update" %>
+    </p>
+  <% end %>
+</div>
