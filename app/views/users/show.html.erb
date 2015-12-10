@@ -1,29 +1,27 @@
-<h4><%= "#{@user.email}" %></h4>
+<div id="user-profile">
+  <h3 id="list-title">Things I Don't Need</h3>
 
-<h3>Stuff You Didn't Buy</h3>
+  <% @user.items.each do |item| %>
+    <ul>
+    <li>
+      <%= item.name %>
+      <%= item.price %>
+      <%= item.category %>
+      <%= link_to "edit", "/users/#{@user.id}/items/#{item.id}/edit" %> |
+      <%= link_to "x", "/users/#{@user.id}/items/#{item.id}", method: :delete, data: {confirm: "Gotta treat yourself every now and then. Delete item?"} %>
+    </li>
+  </ul>
+  <% end %>
 
-<% @user.items.each do |item| %>
-  <ul>
-  <li>
-    <%= item.name %>
-    <%= item.price %>
-    <%= item.category %>
-    <%= link_to "edit", "/users/#{@user.id}/items/#{item.id}/edit" %> |
-    <%= link_to "x", "/users/#{@user.id}/items/#{item.id}", method: :delete, data: {confirm: "Gotta treat yourself every now and then. Delete item?"} %>
-  </li>
-</ul>
-<% end %>
+  <div id="blank-item">
+    <%= render partial: 'items/form' %>
+  </div>
 
-<div id="blank-item">
-  <%= render partial: 'items/form' %>
+  <h4>Total Savings:</h4>
+
+  <% ttlSaved = 0  %>
+  <% @user.items.each do |item| %>
+    <% ttlSaved += item.price %>
+  <% end %>
+  <%= ttlSaved %>
 </div>
-
-<h4>Total Savings:</h4>
-
-<% ttlSaved = 0  %>
-<% @user.items.each do |item| %>
-  <% ttlSaved += item.price %>
-<% end %>
-<%= ttlSaved %>
-
-<%#= link_to "add item", "/users/#{@user.id}/items/new" %>

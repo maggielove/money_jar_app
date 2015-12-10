@@ -14,6 +14,65 @@
  *= require_self
  */
 
+/*site-wide style*/
 body {
-  /*background-color: gray;*/
+  font-family: 'Open Sans', sans-serif;
+  overflow: hidden;
+}
+
+#site-title {
+  width: 400px;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 70px;
+}
+
+#motto {
+  margin-top: -25px;
+}
+
+#session-info {
+  float: right;
+  margin-top: -50px;
+  margin-right: 40px;
+  font-size: 16px;
+
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+/*Home page*/
+#info {
+  width: 700px;
+  margin: 0 auto;
+  margin-top: 50px;
+  color: #404040;
+}
+
+
+/*Log In and Sign Up pages*/
+.sessions-form {
+  width: 400px;
+  margin-top: 50px;
+  margin-left: 42%;
+  /*margin: 0 auto;*/
+  text-align: left;
+}
+
+/*User profile page*/
+#user-profile {
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 50px;
+  text-align: center;
+}
+
+h3#list-title {
+  font-size: 25px;
 }
