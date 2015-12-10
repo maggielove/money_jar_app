@@ -10,17 +10,20 @@
 </head>
 <body>
 
-<div id="session-info">
-      <% if current_user %>
-        Signed in under <%= current_user.email %> | <%= link_to "Log Out", '/logout' %>
-      <% else %>
-        <%= link_to "Log In", '/login' %> | <%= link_to "Sign Up", new_user_path %>
-      <% end %>
-</div>
+<div id="top-banner">
+  <div id="session-info">
+        <% if current_user %>
+          Signed in under <%= current_user.email %> | <%= link_to "Log Out", '/logout' %>
+        <% else %>
+          <%= link_to "Log In", '/login' %> | <%= link_to "Sign Up", new_user_path %>
+        <% end %>
+  </div>
 
-<div id="site-title">
-  <h1>savingsTrackr</h1>
-  <p id="motto">💰get money/ don't spend it.💰</p>
+
+  <div id="site-title">
+    <h1>savingsTrackr</h1>
+    <p id="motto">get money/ don't spend it.</p>
+  </div>
 </div>
 
     <%= yield %>
