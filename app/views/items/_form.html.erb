@@ -3,13 +3,13 @@
   <%= form_for @item, url: "/users/#{@user.id}/items" do |f| %>
 
     <%= f.label :name %>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, :placeholder => "e.g. new headphones" %>
 
-    <%= f.label :price %>
-    <%= f.text_field :price %>
+    <%= f.label :price, "Price   $" %>
+    <%= f.text_field :price, :placeholder => "e.g. 50" %>
 
     <%= f.label :category %>
-    <%= f.text_field :category %>
+    <%= f.text_field :category, :placeholder => "e.g. gadgets" %>
 
     <%= f.submit "add" %>
   <% end %>
